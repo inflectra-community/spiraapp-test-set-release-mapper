@@ -1,0 +1,49 @@
+guid: b7e3f1a2-4d8c-49f5-a6b1-c2d3e4f56789
+name: testSetReleaseMapper
+caption: Test Set Release Mapper
+summary: Maps all test cases in a selected test set to a chosen active release in a single operation.
+description: >-
+  Adds a toolbar button to the Test Set List page that allows users to map all test cases
+  within a selected test set to a chosen release. The SpiraApp retrieves active releases,
+  presents a dropdown for selection, fetches the test cases in the test set, and creates
+  release/test case mappings in a single API call.
+productSummary: Maps test set test cases to a release via a toolbar button on the Test Set List page.
+productDescription: >-
+  This SpiraApp adds a "Map to Release" button to the Test Set List page toolbar. Select a
+  single test set, click the button, choose an active release from the dropdown, and all test
+  cases in that test set will be mapped to the chosen release automatically.
+author: Inflectra Corporation
+url: https://spiradoc.inflectra.com/SpiraApps/
+license: MIT License
+copyright: Copyright Inflectra Corporation
+version: 1.1
+
+pageContents:
+  - pageId: 11
+    name: testSetList
+    code: file://testSetList.js
+  - pageId: 12
+    name: testSetDetails
+    code: file://testSetDetails.js
+
+menus:
+  - pageId: 11
+    caption: Test Set Release Mapper
+    isActive: true
+    entries:
+      - name: mapToRelease
+        caption: Map to Release
+        tooltip: Map all test cases in the selected test set to a release
+        isActive: true
+        actionTypeId: 2
+        action: mapToRelease
+  - pageId: 12
+    caption: Test Set Release Mapper
+    isActive: true
+    entries:
+      - name: syncToScheduledRelease
+        caption: Sync to Scheduled Release
+        tooltip: Check and map test cases to this test set's scheduled release
+        isActive: true
+        actionTypeId: 2
+        action: syncToScheduledRelease
